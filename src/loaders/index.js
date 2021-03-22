@@ -1,16 +1,13 @@
-const ExpressServer = require('./server/expressServer');
-const config = require('../config')
+const ExpressServer = require("./server/expressServer");
+const config = require("../config");
+const logger = require("./logger/index");
 
 const startServer = async () => {
-
-
-    const server = new ExpressServer()
-    console.log('Express Loaded')
-
-   server.start();
-   console.log(`Server listening on port: ${config.port}`)
-     
-}
+  const server = new ExpressServer();
+  logger.info("Express Loaded");
+  server.start();
+  logger.info(`Server listening on port: ${config.port}`);
+};
 startServer();
 
 module.exports = startServer;

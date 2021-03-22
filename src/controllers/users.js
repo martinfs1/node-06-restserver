@@ -16,7 +16,7 @@ const getAllUsers = (req, res) => {
           id: uuidv4(),
           name: "Nacho",
         },
-      ];      
+      ];          
       res.json(users);
 }
 
