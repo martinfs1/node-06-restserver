@@ -25,11 +25,11 @@
     }
   ],
   "paths": {
-    "/users/": {
+    "/users": {
       "get": {
         "tags": ["users"],
         "summary": "get a list of all existing users",
-        "description": "This resource represents a list of users in the system.",
+        "description": "This resource get a list of users in the system.",
         "operationId": "getAllUsers",
         "responses": {
           "200": {
@@ -113,8 +113,8 @@
       },
       "delete": {
         "tags": ["users"],
-        "summary": "delete an user by id",
-        "description": "delete an existing user to the system",
+        "summary": "delete an user",
+        "description": "delete an existing user to the system by id",
         "operationId": "deleteUser",
         "parameters": [
           {
