@@ -25,7 +25,7 @@
     }
   ],
   "paths": {
-    "/users": {
+    "/users/": {
       "get": {
         "tags": ["users"],
         "summary": "get a list of all existing users",
