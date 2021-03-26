@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/api/v1",
+      "url": "http://localhost:4000/api/v1",
       "description": "Desarrollo"
     },
     {
@@ -60,7 +60,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/user"
+                "$ref": "#/components/schemas/User"
               }
             }
           }
@@ -142,7 +142,7 @@
   "components": {
     "schemas": {
       "User": {
-        "required": ["id"],
+        "required": ["id", "name"],
         "type": "object",
         "properties": {
           "id": {
