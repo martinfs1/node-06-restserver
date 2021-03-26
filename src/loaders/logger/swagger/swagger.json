@@ -142,11 +142,11 @@
   "components": {
     "schemas": {
       "User": {
-        "required": ["id", "name"],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "id": {
-            "type": "user id",
+            "type": "integer",
             "format": "uuid",
             "example": "2537f5b3-1128-40b0-80d7-e0154611df1e"
           },
