@@ -16,7 +16,11 @@ const getAllUsers = (req, res) => {
           id: uuidv4(),
           name: "Nacho",
         },
-      ];          
+      ];
+      
+      //para probar _errorHandler     
+      // throw new Error('pasaron cosas')     
+
       res.json(users);
 }
 

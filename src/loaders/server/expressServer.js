@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const swaggerUi = require('swagger-ui-express');
+const swaggerUi = require("swagger-ui-express");
 const config = require("../../config");
 const logger = require("../logger/index");
 
@@ -42,6 +42,12 @@ class ExpressServer {
   _errorHandler() {
     this.app.use((err, req, res, next) => {
       const code = err.code || 500;
+
+      logger.error(
+        `${code} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+      );
+      logger.error(err.stack);
+
       res.status(code);
       const body = {
         error: {
@@ -57,7 +63,7 @@ class ExpressServer {
     this.app.use(
       config.swagger.path,
       swaggerUi.serve,
-      swaggerUi.setup(require('../logger/swagger/swagger.json'))
+      swaggerUi.setup(require("../logger/swagger/swagger.json"))
     );
   }
 
